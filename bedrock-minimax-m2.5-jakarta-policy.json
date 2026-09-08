@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowMiniMaxM25InJakarta",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": "arn:aws:bedrock:ap-southeast-3::foundation-model/minimax.minimax-m2.5"
+    },
+    {
+      "Sid": "DenyAllOtherBedrockModelInference",
+      "Effect": "Deny",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "NotResource": "arn:aws:bedrock:ap-southeast-3::foundation-model/minimax.minimax-m2.5"
+    }
+  ]
+}
